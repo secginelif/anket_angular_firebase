@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-white" style="height: 150px; text-align: center; background: rgb(74, 134, 87);">
+            <h2 style="margin-top: 50px;">Anket Yönetim Platformu</h2>
+            <button class="btn btn-danger" style="float: right;" (click)="OturumKapat()" *ngIf="fbServis.OturumKontrol()">Oturumu Kapat</button>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"> 
+            <button class="btn btn-warning text-white" [routerLink]="['/register']">Üye Ekle</button>
+            <button class="btn btn-danger" [routerLink]="['/kayitekle']">Anket Ekle</button>
+            <small>Oturum Açtınız...</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card m-3" *ngFor="let icerik of icerikler">
+                <div class="card-header " style="background: rgb(245, 245, 245);">
+                    <h4>{{icerik.baslik}}</h4>
+                    <div style="float: right;">
+                        <button class="btn btn-outline-info btn-sm" [routerLink]="['/icerikdetay',icerik.key]">Detay</button>
+                        <button class="btn btn-outline-warning btn-sm" [routerLink]="['/icerikduzenle',icerik.key]">Düzenle</button>
+                        <button class="btn btn-outline-danger btn-sm" [routerLink]="['/iceriksil',icerik.key]">Sil</button>
+                    </div>
+                </div>
+                <div class="card-body" style="background: rgb(255, 255, 255);" >
+                  <h6>{{icerik.icerik}}</h6>
+                </div>
+                <div class="card-footer bg-dark text-white">
+                    
+                    <b>Eklenme Tarihi: </b>{{icerik.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} br
+                    <b>Eklenme Tarihi: </b>{{icerik.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} br
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

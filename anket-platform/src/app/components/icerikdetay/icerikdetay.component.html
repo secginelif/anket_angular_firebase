@@ -1,0 +1,37 @@
+
+           
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-white" style="height: 150px; text-align: center; background: rgb(74, 134, 87);">
+            <h2 style="margin-top: 50px;">Anket Yönetim Platformu</h2>
+            <button class="btn btn-primary" style="float: left;" [routerLink]="['/']">Anketleri Listele</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" ngModel>
+        <form>
+        <div class="col-md-12">
+                <div class="card mt-3" style="width: 800px; margin: auto; " >
+                    <div class="card-header bg-success text-white" >
+                        <h4 style="text-align: center;">Anket</h4> 
+                        <h5>{{secicerik.baslik}}</h5>
+                    </div>
+                    <div class="card-body" style="background: rgb(180, 180, 180);">
+                        <h5>Anket Hakkında Bilgiler</h5>
+                        <h6>Anket Konusu: {{secicerik.icerik}}</h6>
+                        <h6>Hedef Kitlesi: {{secicerik.hedefkitle}}</h6>
+                        <h6>Soru Sayısı: {{secicerik.sorusayisi}}</h6>
+        
+                    </div>
+                    <div class="card-footer text-white" style="background: rgb(73, 73, 73);">
+                    <b>Oluşturulma Tarihi :</b>{{secicerik.kayTarih | date:'dd.MM.yyyy HH:mm:mm'}} 
+                    <b>Güncellenme Tarihi :</b>{{secicerik.duzTarih | date:'dd.MM.yyyy HH:mm:mm'}} 
+                    </div>
+                </div>
+        </div>
+        </form>
+    </div>
+</div>
+    
+
